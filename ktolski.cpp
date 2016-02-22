@@ -15,7 +15,6 @@ KLOTSKI
 
     X           x
 
-
 Rules:
 
     Like other sliding-block puzzles, several different-sized block pieces are placed inside a box, 
@@ -24,19 +23,19 @@ Rules:
     to remove blocks, and may only slide blocks horizontally and vertically. Common goals are 
     to solve the puzzle with a minimum number of moves or in a minimum amount of time.
 
-
-
 Klotski Solver
 
-    
 */
 
 #include <bits/stdc++.h>
 using namespace std ;
 
-
-bool vis[ 5 ][ 4 ] ; // Keep the record of occupied cells
 int state[ 5 ][ 4 ] ; // Keep  the current state of the board
+map<string,bool> m ; // Keep track of visited states
+map<string,int> depth; // Keep track of the depth of exploration
+map<string,int> st ; // Map between states and integers
+map<int,string> ts ; // Inverse map of the above mentioned
+int parent[ 30000 ] ; // Keep track of the parents in exploration
 
 struct piece
 {
@@ -54,30 +53,17 @@ struct piece
         height = height_ ; 
     }
 
-    int getWidth ( )
-    {
-        return width ;
-    }
+    int getWidth ( ) { return width ; }
 
-    int getHeight( )
-    {
-        return height ; 
-    }
+    int getHeight( ) { return height ; }
 
     int getNotation( )
     {
         /*
         Notation for pieces of the board
-
             width x height -> notation
-            0x0 -> 0 
-            1x1 -> 1 
-            1x2 -> 2
-            2x1 -> 3
-            2x2 -> 4
-
+            0x0 -> 0  ; 1x1 -> 1  ; 1x2 -> 2 ; 2x1 -> 3 ; 2x2 -> 4
         */
-
         if ( width == 1 && height == 1 ) return 1 ;
         if ( width == 1 && height == 2 ) return 2 ;
         if ( width == 2 && height == 1 ) return 3 ;
@@ -90,30 +76,17 @@ struct piece
         x = x_ ; 
         y = y_ ; 
 
-        // Mark the visited places
-
-        for ( int i = y ; i < y + height ; i++ )
-            for ( int j = x ; j < x + width ; j++ )
-                vis[ i ][ j ] = true ; 
-
         // Set the state of the board based on the piece notation
-
         int n = getNotation() ; 
 
-       for ( int i = y ; i < y + height ; i++ )
+        for ( int i = y ; i < y + height ; i++ )
             for ( int j = x ; j < x + width ; j++ )
                 state[ i ][ j ] = n ; 
     }
 
-    int getX ( )
-    {
-        return x ;
-    }
+    int getX ( ) { return x ; }
 
-    int getY ( )
-    {
-        return y ; 
-    }
+    int getY ( ) { return y ; }
 
     bool left ( )
     {
@@ -121,7 +94,7 @@ struct piece
         // If it is touching the left border
         if ( x == 0 ) return false ; 
         // If it has height 1 or 2 blocks and there is a free space next to it
-        if ( !vis[ y ][ x-1 ] && !vis[ y+height-1 ][ x-1 ] ) return true ; 
+        if ( !state[ y ][ x-1 ] && !state[ y+height-1 ][ x-1 ] ) return true ; 
         // Otherwise it's not possible to make such move
         return false ;
     }
@@ -132,7 +105,7 @@ struct piece
         // If it is touching the right border
         if ( x + width - 1 == 3 ) return false ; 
         // If it has height 1 or 2 blocks and there is a free space next to it
-        if ( !vis[ y ][ x+width ] && !vis[ y+height-1 ][ x+width ] ) return true ; 
+        if ( !state[ y ][ x+width ] && !state[ y+height-1 ][ x+width ] ) return true ; 
         // Otherwise it's not possible to make such move
         return false ;
     }
@@ -143,7 +116,7 @@ struct piece
         // If it is touching the top border
         if ( y == 0 ) return false ; 
         // If it has width 1 or 2 blocks and there is a free space next to it
-        if ( !vis[ y-1 ][ x ] && !vis[ y-1 ][ x+width-1 ] ) return true ; 
+        if ( !state[ y-1 ][ x ] && !state[ y-1 ][ x+width-1 ] ) return true ; 
         // Otherwise it's not possible to make such move
         return false ;
     }
@@ -154,7 +127,7 @@ struct piece
         // If it is touching the bottom border
         if ( y + height - 1 == 4 ) return false ; 
         // If it has width 1 or 2 blocks and there is a free space next to it
-        if ( !vis[ y+height ][ x ] && !vis[ y+height ][ x+width-1 ] ) return true ; 
+        if ( !state[ y+height ][ x ] && !state[ y+height ][ x+width-1 ] ) return true ; 
         // Otherwise it's not possible to make such move
         return false ;
     }
@@ -163,9 +136,7 @@ struct piece
     {
         if ( !left() ) return ;  // Check if possible to move
         // Make move to the left and actualize board
-        vis[ y ][ x + width - 1 ] = false ; vis[ y + height - 1 ][ x + width - 1 ] = false ; 
         state[ y ][ x + width - 1 ] = 0 ; state[ y + height - 1 ][ x + width - 1 ] = 0 ; 
-        vis[ y ][ x - 1 ] = true ;  vis[ y + height - 1 ][ x - 1 ] = true ; 
         state[ y ][ x - 1 ] = getNotation() ;  state[ y + height - 1 ][ x - 1 ] = getNotation() ; 
         x--;
     }
@@ -174,9 +145,7 @@ struct piece
     {
         if ( !right() ) return ; // Check if possible to move
         // Make move to the right and actualize board
-        vis[ y ][ x ] = false ; vis[ y + height - 1 ][ x ] = false ; 
         state[ y ][ x ] = 0 ; state[ y + height - 1 ][ x ] = 0 ; 
-        vis[ y ][ x + width ] = true ; vis[ y + height -1 ][ x + width ] = true ;
         state[ y ][ x + width ] = getNotation() ; state[ y + height -1 ][ x + width ] = getNotation() ;
         x++;
     }
@@ -185,9 +154,7 @@ struct piece
     {
         if ( !up() ) return ; // Check if possible move 
         // Make move up and actualize board
-        vis[ y + height - 1 ][ x ] = false ; vis[ y + height - 1 ][ x + width - 1 ] = false ; 
         state[ y + height - 1 ][ x ] = 0 ; state[ y + height - 1 ][ x + width - 1 ] = 0 ; 
-        vis[ y - 1 ][ x ] = true ; vis[ y - 1 ][ x + width - 1 ] = true ; 
         state[ y - 1 ][ x ] = getNotation() ; state[ y - 1 ][ x + width - 1 ] = getNotation() ; 
         y--;
     }
@@ -196,23 +163,18 @@ struct piece
     {
         if ( !down() ) return ; // Check if possible move
         // Make move down and actualize board 
-        vis[ y ][ x ] = false ; vis[ y ][ x + width - 1 ] = false ; 
         state[ y ][ x ] = 0 ; state[ y ][ x + width - 1 ] = 0 ; 
-        vis[ y + height ][ x ] = true ; vis[ y + height ][ x + width - 1 ] = true ;
         state[ y + height ][ x ] = getNotation() ; state[ y + height ][ x + width - 1 ] = getNotation() ;
         y++;
     }
 
 } ;
 
-
 piece pieces [ 10 ] ; // Array of the different pieces to locate in board
-
 
 void initBoard ()
 {
-    // Empty cells of the board
-    memset ( vis , 0 , sizeof ( vis ) ) ; 
+    // Empty cells of the board 
     memset ( state , 0 , sizeof( state ) ) ;
     // Fill the board with pieces positions
     pieces[ 0 ] = piece ( 1 , 2 ) ; pieces[ 0 ].setYX ( 0 , 0 ) ; 
@@ -233,12 +195,9 @@ string encode( )
     
     string s = "";
     for ( int i = 0 ; i < 5 ; i++ )
-    {
         for ( int j = 0 ; j < 4 ; j++ )
-        {
             s += ( char ) ( '0' + state[ i ][ j ] ) ; 
-        }
-    }
+
     return s ; 
 }
 
@@ -247,7 +206,6 @@ void setBoard( string s )
     // This method reconstructs a board base on it's encoding
 
     // Empty cells of the board
-    memset ( vis , 0 , sizeof ( vis ) ) ; 
     memset ( state , 0 , sizeof( state ) ) ;
     // Fill the board with pieces positions
     int p = 0 ; 
@@ -318,6 +276,30 @@ void printBoard ()
     cout << endl;
 }
 
+bool checkEnd ( )
+{
+    // Check if final state ( solution board ) has been reached
+    return ( state[ 3 ][ 1 ] == state[ 3 ][ 2 ] &&  state[ 3 ][ 2 ] == state[ 4 ][ 1 ] && 
+             state[ 4 ][ 1 ] == state[ 4 ][ 2 ] &&  state[ 4 ][ 1 ] == 4 ) ;
+}
+
+void printSolution ( string s )
+{
+    // Recursively printing optimal path
+    if ( st[ s ] == 0 )
+    {
+        cout << 0 << endl; 
+        setBoard( s ) ; 
+        printBoard( ) ; 
+        return ; 
+    }
+
+    printSolution ( ts[ parent[ st[ s ] ] ] ) ; 
+    cout << depth[ s ] << endl; 
+    setBoard( s ) ; 
+    printBoard( ) ;  
+}
+
 
 int main()
 {
@@ -325,13 +307,7 @@ int main()
     initBoard() ; 
 
     // Start BFS
-    map<string,bool> m ; // Keep track of visited states
-    map<string,int> depth; // Keep track of the depth of exploration
-    map<string,int> st ; // Map between states and integers
-    map<int,string> ts ; // Inverse map of the above mentioned
-    int parent[ 30000 ] ; // Keep track of the parents 
     queue<string> q; // Queue to keep current visited state
-
     long long c = 0 ; // Number of states visited so far
 
     string s = encode() ; 
@@ -344,7 +320,6 @@ int main()
 
     while ( !q.empty() )
     {
-
         string cur = q.front() ; q.pop() ; 
         // Reconstruct board
         setBoard ( cur ) ; 
@@ -368,25 +343,37 @@ int main()
                     parent[ st[ aux ] ] = st[ cur ] ;  
 
                     // Check if reached final state
-                    if ( state[ 3 ][ 1 ] == state[ 3 ][ 2 ] && 
-                         state[ 3 ][ 2 ] == state[ 4 ][ 1 ] && 
-                         state[ 4 ][ 1 ] == state[ 4 ][ 2 ] && 
-                         state[ 4 ][ 1 ] == 4)
+                    if ( checkEnd() )
                     {
-                        while ( st[ aux] != 0 )
-                        {
-                            setBoard( aux ) ; 
-                            printBoard() ; 
-                            cout << depth[ aux ] << endl;
-                            aux = ts[ parent[ st[ aux ] ] ] ;
-                        }
-                        setBoard( aux ) ; 
-                        printBoard() ; 
-                        cout << 0 << endl;
+                        printSolution( aux ) ; 
                         return 0 ; 
                     }
-
                  }
+
+                 // Check if another possibility to move in the same direction
+                 if ( pieces[ i ].left() )
+                 {
+                     pieces[ i ].moveLeft() ; 
+                     string aux = encode() ;
+                     if ( !m[ aux ] ) 
+                     {
+                        q.push( aux ) ;
+                        m[ aux ] = true ;
+                        depth[ aux ] = depth[ cur ] + 1 ;
+                        ts[ c ] = aux ; 
+                        st[ aux ] = c++;
+                        parent[ st[ aux ] ] = st[ cur ] ;  
+
+                        // Check if reached final state
+                        if ( checkEnd() )
+                        {
+                            printSolution( aux ) ; 
+                            return 0 ; 
+                        }
+                     }
+                     pieces[ i ].moveRight() ; 
+                 }
+
                  pieces[ i ].moveRight() ; 
             }
 
@@ -404,23 +391,35 @@ int main()
                     parent[ st[ aux ] ] = st[ cur ] ;  
 
                     // Check if reached final state
-                    if ( state[ 3 ][ 1 ] == state[ 3 ][ 2 ] && 
-                         state[ 3 ][ 2 ] == state[ 4 ][ 1 ] && 
-                         state[ 4 ][ 1 ] == state[ 4 ][ 2 ] && 
-                         state[ 4 ][ 1 ] == 4)
+                    if ( checkEnd() )
                     {    
-                        while ( st[ aux] != 0 )
-                        {
-                            setBoard( aux ) ; 
-                            printBoard() ; 
-                            cout << depth[ aux ] << endl;
-                            aux = ts[ parent[ st[ aux ] ] ] ;
-                        }
-                        setBoard( aux ) ; 
-                        printBoard() ; 
-                        cout << 0 << endl;
+                        printSolution( aux ) ; 
                         return 0 ; 
                     }
+                 }
+                 // Check if move again in the same direction
+                 if ( pieces[ i ].right() )
+                 {
+                     pieces[ i ].moveRight() ; 
+                     string aux = encode() ;
+                     if ( !m[ aux ] ) 
+                     {
+                        q.push( aux ) ;
+                        m[ aux ] = true ;
+                        depth[ aux ] = depth[ cur ] + 1 ;
+                        ts[ c ] = aux ; 
+                        st[ aux ] = c++;
+                        parent[ st[ aux ] ] = st[ cur ] ;  
+
+                        // Check if reached final state
+                        if ( checkEnd() )
+                        {    
+                            printSolution( aux ) ; 
+                            return 0 ; 
+                        }
+                     }
+
+                     pieces[ i ].moveLeft() ; 
                  }
 
                  pieces[ i ].moveLeft() ; 
@@ -440,23 +439,36 @@ int main()
                     parent[ st[ aux ] ] = st[ cur ] ;  
 
                     // Check if reached final state
-                    if ( state[ 3 ][ 1 ] == state[ 3 ][ 2 ] && 
-                         state[ 3 ][ 2 ] == state[ 4 ][ 1 ] && 
-                         state[ 4 ][ 1 ] == state[ 4 ][ 2 ] && 
-                         state[ 4 ][ 1 ] == 4)
+                    if ( checkEnd() )
                     {
-                        while ( st[ aux] != 0 )
-                        {
-                            setBoard( aux ) ; 
-                            printBoard() ; 
-                            cout << depth[ aux ] << endl;
-                            aux = ts[ parent[ st[ aux ] ] ] ;
-                        }
-                        setBoard( aux ) ; 
-                        printBoard() ; 
-                        cout << 0 << endl;
+                        printSolution( aux ) ;
                         return 0 ; 
                     }
+                 }
+
+                 // Check if move in the same direction
+                  if ( pieces[ i ].up() )
+                 {
+                     pieces[ i ].moveUp() ; 
+                     string aux = encode() ;
+                     if ( !m[ aux ] ) 
+                     {
+                        q.push( aux ) ;
+                        m[ aux ] = true ;
+                        depth[ aux ] = depth[ cur ] + 1 ;
+                        ts[ c ] = aux ; 
+                        st[ aux ] = c++;
+                        parent[ st[ aux ] ] = st[ cur ] ;  
+
+                        // Check if reached final state
+                        if ( checkEnd() )
+                        {
+                            printSolution( aux ) ;
+                            return 0 ; 
+                        }
+                     }
+
+                     pieces[ i ].moveDown() ; 
                  }
 
                  pieces[ i ].moveDown() ; 
@@ -476,25 +488,37 @@ int main()
                     parent[ st[ aux ] ] = st[ cur ] ;  
 
                     // Check if reached final state
-                    if ( state[ 3 ][ 1 ] == state[ 3 ][ 2 ] && 
-                         state[ 3 ][ 2 ] == state[ 4 ][ 1 ] && 
-                         state[ 4 ][ 1 ] == state[ 4 ][ 2 ] && 
-                         state[ 4 ][ 1 ] == 4)
+                    if ( checkEnd() )
                     {
-                        while ( st[ aux] != 0 )
-                        {
-                            setBoard( aux ) ; 
-                            printBoard() ; 
-                            cout << depth[ aux ] << endl;
-                            aux = ts[ parent[ st[ aux ] ] ] ;
-                        }
-                        setBoard( aux ) ; 
-                        printBoard() ; 
-                        cout << 0 << endl;
+                        printSolution( aux ) ;
                         return 0 ; 
                     }
                  }
+                 // Check if move in the same direction
+                 if ( pieces[ i ].down() )
+                 {
+                     pieces[ i ].moveDown() ; 
+                     string aux = encode() ;
+                     if ( !m[ aux ] ) 
+                     {
+                        q.push( aux ) ;
+                        m[ aux ] = true ;
+                        depth[ aux ] = depth[ cur ] + 1 ;
+                        ts[ c ] = aux ; 
+                        st[ aux ] = c++;
+                        parent[ st[ aux ] ] = st[ cur ] ;  
 
+                        // Check if reached final state
+                        if ( checkEnd() )
+                        {
+                            printSolution( aux ) ;
+                            return 0 ; 
+                        }
+                     }
+
+                     pieces[ i ].moveUp() ; 
+                 }
+                 
                  pieces[ i ].moveUp() ; 
             }
 
