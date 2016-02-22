@@ -36,6 +36,8 @@ map<string,int> depth; // Keep track of the depth of exploration
 map<string,int> st ; // Map between states and integers
 map<int,string> ts ; // Inverse map of the above mentioned
 int parent[ 30000 ] ; // Keep track of the parents in exploration
+queue<string> q; // Queue to keep current visited state
+long long c = 0 ; // Number of states visited so far
 
 struct piece
 {
@@ -283,6 +285,16 @@ bool checkEnd ( )
              state[ 4 ][ 1 ] == state[ 4 ][ 2 ] &&  state[ 4 ][ 1 ] == 4 ) ;
 }
 
+void update ( string aux , string cur )
+{
+    q.push( aux ) ;
+    m[ aux ] = true ;
+    depth[ aux ] = depth[ cur ] + 1 ;
+    ts[ c ] = aux ; 
+    st[ aux ] = c++;
+    parent[ st[ aux ] ] = st[ cur ] ;  
+}
+
 void printSolution ( string s )
 {
     // Recursively printing optimal path
@@ -307,9 +319,6 @@ int main()
     initBoard() ; 
 
     // Start BFS
-    queue<string> q; // Queue to keep current visited state
-    long long c = 0 ; // Number of states visited so far
-
     string s = encode() ; 
     q.push(s) ; 
     m[s] = true ; 
@@ -323,8 +332,6 @@ int main()
         string cur = q.front() ; q.pop() ; 
         // Reconstruct board
         setBoard ( cur ) ; 
-        //cout << sofar << endl;
-        //printBoard() ; 
 
         // Check if any piece can be moved
         for ( int i = 0 ; i < 10 ; i++ )
@@ -335,13 +342,7 @@ int main()
                  string aux = encode() ;
                  if ( !m[ aux ] ) 
                  {
-                    q.push( aux ) ;
-                    m[ aux ] = true ;
-                    depth[ aux ] = depth[ cur ] + 1 ;
-                    ts[ c ] = aux ; 
-                    st[ aux ] = c++;
-                    parent[ st[ aux ] ] = st[ cur ] ;  
-
+                    update ( aux , cur ) ;
                     // Check if reached final state
                     if ( checkEnd() )
                     {
@@ -357,13 +358,7 @@ int main()
                      string aux = encode() ;
                      if ( !m[ aux ] ) 
                      {
-                        q.push( aux ) ;
-                        m[ aux ] = true ;
-                        depth[ aux ] = depth[ cur ] + 1 ;
-                        ts[ c ] = aux ; 
-                        st[ aux ] = c++;
-                        parent[ st[ aux ] ] = st[ cur ] ;  
-
+                        update( aux , cur ) ; 
                         // Check if reached final state
                         if ( checkEnd() )
                         {
@@ -383,13 +378,7 @@ int main()
                  string aux = encode() ;
                  if ( !m[ aux ] ) 
                  {
-                    q.push( aux ) ;
-                    m[ aux ] = true ;
-                    depth[ aux ] = depth[ cur ] + 1 ;
-                    ts[ c ] = aux ; 
-                    st[ aux ] = c++;
-                    parent[ st[ aux ] ] = st[ cur ] ;  
-
+                    update( aux , cur ) ; 
                     // Check if reached final state
                     if ( checkEnd() )
                     {    
@@ -404,13 +393,7 @@ int main()
                      string aux = encode() ;
                      if ( !m[ aux ] ) 
                      {
-                        q.push( aux ) ;
-                        m[ aux ] = true ;
-                        depth[ aux ] = depth[ cur ] + 1 ;
-                        ts[ c ] = aux ; 
-                        st[ aux ] = c++;
-                        parent[ st[ aux ] ] = st[ cur ] ;  
-
+                        update( aux , cur ) ; 
                         // Check if reached final state
                         if ( checkEnd() )
                         {    
@@ -431,13 +414,7 @@ int main()
                  string aux = encode() ;
                  if ( !m[ aux ] ) 
                  {
-                    q.push( aux ) ;
-                    m[ aux ] = true ;
-                    depth[ aux ] = depth[ cur ] + 1 ;
-                    ts[ c ] = aux ; 
-                    st[ aux ] = c++;
-                    parent[ st[ aux ] ] = st[ cur ] ;  
-
+                    update( aux , cur ) ; 
                     // Check if reached final state
                     if ( checkEnd() )
                     {
@@ -453,13 +430,7 @@ int main()
                      string aux = encode() ;
                      if ( !m[ aux ] ) 
                      {
-                        q.push( aux ) ;
-                        m[ aux ] = true ;
-                        depth[ aux ] = depth[ cur ] + 1 ;
-                        ts[ c ] = aux ; 
-                        st[ aux ] = c++;
-                        parent[ st[ aux ] ] = st[ cur ] ;  
-
+                        update( aux , cur ) ; 
                         // Check if reached final state
                         if ( checkEnd() )
                         {
@@ -480,13 +451,7 @@ int main()
                  string aux = encode() ;
                  if ( !m[ aux ] ) 
                  {
-                    q.push( aux ) ;
-                    m[ aux ] = true ;
-                    depth[ aux ] = depth[ cur ] + 1 ;
-                    ts[ c ] = aux ; 
-                    st[ aux ] = c++;
-                    parent[ st[ aux ] ] = st[ cur ] ;  
-
+                    update( aux , cur ) ; 
                     // Check if reached final state
                     if ( checkEnd() )
                     {
@@ -501,13 +466,7 @@ int main()
                      string aux = encode() ;
                      if ( !m[ aux ] ) 
                      {
-                        q.push( aux ) ;
-                        m[ aux ] = true ;
-                        depth[ aux ] = depth[ cur ] + 1 ;
-                        ts[ c ] = aux ; 
-                        st[ aux ] = c++;
-                        parent[ st[ aux ] ] = st[ cur ] ;  
-
+                        update( aux , cur ) ; 
                         // Check if reached final state
                         if ( checkEnd() )
                         {
