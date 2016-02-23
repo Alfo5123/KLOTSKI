@@ -1,729 +1,638 @@
 0
-
-2 4 4 2 
-2 4 4 2 
-2 3 3 2 
-2 1 1 2 
-1     1 
+A B B C 
+A B B C 
+D E E H 
+D F G H 
+I     J 
 
 1
-
-2 4 4 2 
-2 4 4 2 
-2 3 3 2 
-2   1 2 
-1 1   1 
+A B B C 
+A B B C 
+D E E H 
+D   G H 
+I F   J 
 
 2
-
-2 4 4 2 
-2 4 4 2 
-2 3 3 2 
-2   1 2 
-1 1 1   
+A B B C 
+A B B C 
+D E E H 
+D   G H 
+I F J   
 
 3
-
-2 4 4 2 
-2 4 4 2 
-2 3 3   
-2   1 2 
-1 1 1 2 
+A B B C 
+A B B C 
+D E E   
+D   G H 
+I F J H 
 
 4
-
-2 4 4 2 
-2 4 4 2 
-2   3 3 
-2   1 2 
-1 1 1 2 
+A B B C 
+A B B C 
+D   E E 
+D   G H 
+I F J H 
 
 5
-
-2 4 4 2 
-2 4 4 2 
-  2 3 3 
-  2 1 2 
-1 1 1 2 
+A B B C 
+A B B C 
+  D E E 
+  D G H 
+I F J H 
 
 6
-
-2 4 4 2 
-2 4 4 2 
-  2 3 3 
-1 2 1 2 
-  1 1 2 
+A B B C 
+A B B C 
+  D E E 
+I D G H 
+  F J H 
 
 7
-
-2 4 4 2 
-2 4 4 2 
-  2 3 3 
-1 2 1 2 
-1   1 2 
+A B B C 
+A B B C 
+  D E E 
+I D G H 
+F   J H 
 
 8
-
-2 4 4 2 
-2 4 4 2 
-    3 3 
-1 2 1 2 
-1 2 1 2 
+A B B C 
+A B B C 
+    E E 
+I D G H 
+F D J H 
 
 9
-
-2 4 4 2 
-2 4 4 2 
-3 3     
-1 2 1 2 
-1 2 1 2 
+A B B C 
+A B B C 
+E E     
+I D G H 
+F D J H 
 
 10
-
-2 4 4 2 
-2 4 4 2 
-3 3 1   
-1 2   2 
-1 2 1 2 
+A B B C 
+A B B C 
+E E G   
+I D   H 
+F D J H 
 
 11
-
-2 4 4 2 
-2 4 4 2 
-3 3   1 
-1 2   2 
-1 2 1 2 
+A B B C 
+A B B C 
+E E   G 
+I D   H 
+F D J H 
 
 12
-
-2 4 4 2 
-2 4 4 2 
-3 3 1 1 
-1 2   2 
-1 2   2 
+A B B C 
+A B B C 
+E E J G 
+I D   H 
+F D   H 
 
 13
-
-2 4 4 2 
-2 4 4 2 
-3 3 1 1 
-1   2 2 
-1   2 2 
+A B B C 
+A B B C 
+E E J G 
+I   D H 
+F   D H 
 
 14
-
-2 4 4 2 
-2 4 4 2 
-3 3 1 1 
-  1 2 2 
-1   2 2 
+A B B C 
+A B B C 
+E E J G 
+  I D H 
+F   D H 
 
 15
-
-2 4 4 2 
-2 4 4 2 
-3 3 1 1 
-    2 2 
-1 1 2 2 
+A B B C 
+A B B C 
+E E J G 
+    D H 
+F I D H 
 
 16
-
-2 4 4 2 
-2 4 4 2 
-    1 1 
-3 3 2 2 
-1 1 2 2 
+A B B C 
+A B B C 
+    J G 
+E E D H 
+F I D H 
 
 17
-
-2 4 4 2 
-2 4 4 2 
-1     1 
-3 3 2 2 
-1 1 2 2 
+A B B C 
+A B B C 
+J     G 
+E E D H 
+F I D H 
 
 18
-
-2 4 4 2 
-2 4 4 2 
-1 1     
-3 3 2 2 
-1 1 2 2 
+A B B C 
+A B B C 
+J G     
+E E D H 
+F I D H 
 
 19
-
-2 4 4 2 
-2 4 4 2 
-1 1 2   
-3 3 2 2 
-1 1   2 
+A B B C 
+A B B C 
+J G D   
+E E D H 
+F I   H 
 
 20
-
-2 4 4 2 
-2 4 4 2 
-1 1 2 2 
-3 3 2 2 
-1 1     
+A B B C 
+A B B C 
+J G D H 
+E E D H 
+F I     
 
 21
-
-2 4 4 2 
-2 4 4 2 
-1 1 2 2 
-3 3 2 2 
-1     1 
+A B B C 
+A B B C 
+J G D H 
+E E D H 
+F     I 
 
 22
-
-2 4 4 2 
-2 4 4 2 
-1 1 2 2 
-3 3 2 2 
-    1 1 
+A B B C 
+A B B C 
+J G D H 
+E E D H 
+    F I 
 
 23
-
-2 4 4 2 
-2 4 4 2 
-1 1 2 2 
-    2 2 
-3 3 1 1 
+A B B C 
+A B B C 
+J G D H 
+    D H 
+E E F I 
 
 24
-
-2 4 4 2 
-2 4 4 2 
-  1 2 2 
-1   2 2 
-3 3 1 1 
+A B B C 
+A B B C 
+  G D H 
+J   D H 
+E E F I 
 
 25
-
-2 4 4 2 
-2 4 4 2 
-1   2 2 
-1   2 2 
-3 3 1 1 
+A B B C 
+A B B C 
+G   D H 
+J   D H 
+E E F I 
 
 26
-
-2 4 4 2 
-2 4 4 2 
-1 2   2 
-1 2   2 
-3 3 1 1 
+A B B C 
+A B B C 
+G D   H 
+J D   H 
+E E F I 
 
 27
-
-2 4 4 2 
-2 4 4 2 
-1 2 2   
-1 2 2   
-3 3 1 1 
+A B B C 
+A B B C 
+G D H   
+J D H   
+E E F I 
 
 28
-
-2 4 4   
-2 4 4   
-1 2 2 2 
-1 2 2 2 
-3 3 1 1 
+A B B   
+A B B   
+G D H C 
+J D H C 
+E E F I 
 
 29
-
-2   4 4 
-2   4 4 
-1 2 2 2 
-1 2 2 2 
-3 3 1 1 
+A   B B 
+A   B B 
+G D H C 
+J D H C 
+E E F I 
 
 30
-
-  2 4 4 
-  2 4 4 
-1 2 2 2 
-1 2 2 2 
-3 3 1 1 
+  A B B 
+  A B B 
+G D H C 
+J D H C 
+E E F I 
 
 31
-
-1 2 4 4 
-  2 4 4 
-  2 2 2 
-1 2 2 2 
-3 3 1 1 
+G A B B 
+  A B B 
+  D H C 
+J D H C 
+E E F I 
 
 32
-
-1 2 4 4 
-1 2 4 4 
-  2 2 2 
-  2 2 2 
-3 3 1 1 
+G A B B 
+J A B B 
+  D H C 
+  D H C 
+E E F I 
 
 33
-
-1 2 4 4 
-1 2 4 4 
-2   2 2 
-2   2 2 
-3 3 1 1 
+G A B B 
+J A B B 
+D   H C 
+D   H C 
+E E F I 
 
 34
-
-1   4 4 
-1   4 4 
-2 2 2 2 
-2 2 2 2 
-3 3 1 1 
+G   B B 
+J   B B 
+D A H C 
+D A H C 
+E E F I 
 
 35
-
-1 4 4   
-1 4 4   
-2 2 2 2 
-2 2 2 2 
-3 3 1 1 
+G B B   
+J B B   
+D A H C 
+D A H C 
+E E F I 
 
 36
-
-1 4 4 2 
-1 4 4 2 
-2 2 2   
-2 2 2   
-3 3 1 1 
+G B B C 
+J B B C 
+D A H   
+D A H   
+E E F I 
 
 37
-
-1 4 4 2 
-1 4 4 2 
-2 2   2 
-2 2   2 
-3 3 1 1 
+G B B C 
+J B B C 
+D A   H 
+D A   H 
+E E F I 
 
 38
-
-1 4 4 2 
-1 4 4 2 
-2 2 1 2 
-2 2   2 
-3 3   1 
+G B B C 
+J B B C 
+D A F H 
+D A   H 
+E E   I 
 
 39
-
-1 4 4 2 
-1 4 4 2 
-2 2 1 2 
-2 2   2 
-3 3 1   
+G B B C 
+J B B C 
+D A F H 
+D A   H 
+E E I   
 
 40
-
-1 4 4 2 
-1 4 4 2 
-2 2 1 2 
-2 2 1 2 
-3 3     
+G B B C 
+J B B C 
+D A F H 
+D A I H 
+E E     
 
 41
-
-1 4 4 2 
-1 4 4 2 
-2 2 1 2 
-2 2 1 2 
-    3 3 
+G B B C 
+J B B C 
+D A F H 
+D A I H 
+    E E 
 
 42
-
-1 4 4 2 
-1 4 4 2 
-  2 1 2 
-2 2 1 2 
-2   3 3 
+G B B C 
+J B B C 
+  A F H 
+D A I H 
+D   E E 
 
 43
-
-1 4 4 2 
-1 4 4 2 
-    1 2 
-2 2 1 2 
-2 2 3 3 
+G B B C 
+J B B C 
+    F H 
+D A I H 
+D A E E 
 
 44
-
-1 4 4 2 
-1 4 4 2 
-1     2 
-2 2 1 2 
-2 2 3 3 
+G B B C 
+J B B C 
+F     H 
+D A I H 
+D A E E 
 
 45
-
-1     2 
-1 4 4 2 
-1 4 4 2 
-2 2 1 2 
-2 2 3 3 
+G     C 
+J B B C 
+F B B H 
+D A I H 
+D A E E 
 
 46
-
-    1 2 
-1 4 4 2 
-1 4 4 2 
-2 2 1 2 
-2 2 3 3 
+    G C 
+J B B C 
+F B B H 
+D A I H 
+D A E E 
 
 47
-
-1   1 2 
-  4 4 2 
-1 4 4 2 
-2 2 1 2 
-2 2 3 3 
+J   G C 
+  B B C 
+F B B H 
+D A I H 
+D A E E 
 
 48
-
-  1 1 2 
-  4 4 2 
-1 4 4 2 
-2 2 1 2 
-2 2 3 3 
+  J G C 
+  B B C 
+F B B H 
+D A I H 
+D A E E 
 
 49
-
-1 1 1 2 
-  4 4 2 
-  4 4 2 
-2 2 1 2 
-2 2 3 3 
+F J G C 
+  B B C 
+  B B H 
+D A I H 
+D A E E 
 
 50
-
-1 1 1 2 
-2 4 4 2 
-2 4 4 2 
-  2 1 2 
-  2 3 3 
+F J G C 
+D B B C 
+D B B H 
+  A I H 
+  A E E 
 
 51
-
-1 1 1 2 
-2 4 4 2 
-2 4 4 2 
-2   1 2 
-2   3 3 
+F J G C 
+D B B C 
+D B B H 
+A   I H 
+A   E E 
 
 52
-
-1 1 1 2 
-2 4 4 2 
-2 4 4 2 
-2 1   2 
-2   3 3 
+F J G C 
+D B B C 
+D B B H 
+A I   H 
+A   E E 
 
 53
-
-1 1 1 2 
-2 4 4 2 
-2 4 4 2 
-2     2 
-2 1 3 3 
+F J G C 
+D B B C 
+D B B H 
+A     H 
+A I E E 
 
 54
-
-1 1 1 2 
-2     2 
-2 4 4 2 
-2 4 4 2 
-2 1 3 3 
+F J G C 
+D     C 
+D B B H 
+A B B H 
+A I E E 
 
 55
-
-1   1 2 
-2 1   2 
-2 4 4 2 
-2 4 4 2 
-2 1 3 3 
+F   G C 
+D J   C 
+D B B H 
+A B B H 
+A I E E 
 
 56
-
-1 1   2 
-2 1   2 
-2 4 4 2 
-2 4 4 2 
-2 1 3 3 
+F G   C 
+D J   C 
+D B B H 
+A B B H 
+A I E E 
 
 57
-
-1 1 2   
-2 1 2   
-2 4 4 2 
-2 4 4 2 
-2 1 3 3 
+F G C   
+D J C   
+D B B H 
+A B B H 
+A I E E 
 
 58
-
-1 1 2 2 
-2 1 2 2 
-2 4 4   
-2 4 4   
-2 1 3 3 
+F G C H 
+D J C H 
+D B B   
+A B B   
+A I E E 
 
 59
-
-1 1 2 2 
-2 1 2 2 
-2   4 4 
-2   4 4 
-2 1 3 3 
+F G C H 
+D J C H 
+D   B B 
+A   B B 
+A I E E 
 
 60
-
-1 1 2 2 
-2   2 2 
-2 1 4 4 
-2   4 4 
-2 1 3 3 
+F G C H 
+D   C H 
+D J B B 
+A   B B 
+A I E E 
 
 61
-
-1   2 2 
-2 1 2 2 
-2 1 4 4 
-2   4 4 
-2 1 3 3 
+F   C H 
+D G C H 
+D J B B 
+A   B B 
+A I E E 
 
 62
-
-  1 2 2 
-2 1 2 2 
-2 1 4 4 
-2   4 4 
-2 1 3 3 
+  F C H 
+D G C H 
+D J B B 
+A   B B 
+A I E E 
 
 63
-
-2 1 2 2 
-2 1 2 2 
-  1 4 4 
-2   4 4 
-2 1 3 3 
+D F C H 
+D G C H 
+  J B B 
+A   B B 
+A I E E 
 
 64
-
-2 1 2 2 
-2 1 2 2 
-2 1 4 4 
-2   4 4 
-  1 3 3 
+D F C H 
+D G C H 
+A J B B 
+A   B B 
+  I E E 
 
 65
-
-2 1 2 2 
-2 1 2 2 
-2 1 4 4 
-2   4 4 
-1   3 3 
+D F C H 
+D G C H 
+A J B B 
+A   B B 
+I   E E 
 
 66
-
-2 1 2 2 
-2 1 2 2 
-2   4 4 
-2   4 4 
-1 1 3 3 
+D F C H 
+D G C H 
+A   B B 
+A   B B 
+I J E E 
 
 67
-
-2 1 2 2 
-2 1 2 2 
-2 4 4   
-2 4 4   
-1 1 3 3 
+D F C H 
+D G C H 
+A B B   
+A B B   
+I J E E 
 
 68
-
-2 1 2   
-2 1 2   
-2 4 4 2 
-2 4 4 2 
-1 1 3 3 
+D F C   
+D G C   
+A B B H 
+A B B H 
+I J E E 
 
 69
-
-2 1   2 
-2 1   2 
-2 4 4 2 
-2 4 4 2 
-1 1 3 3 
+D F   C 
+D G   C 
+A B B H 
+A B B H 
+I J E E 
 
 70
-
-2   1 2 
-2 1   2 
-2 4 4 2 
-2 4 4 2 
-1 1 3 3 
+D   F C 
+D G   C 
+A B B H 
+A B B H 
+I J E E 
 
 71
-
-2   1 2 
-2   1 2 
-2 4 4 2 
-2 4 4 2 
-1 1 3 3 
+D   F C 
+D   G C 
+A B B H 
+A B B H 
+I J E E 
 
 72
-
-  2 1 2 
-  2 1 2 
-2 4 4 2 
-2 4 4 2 
-1 1 3 3 
+  D F C 
+  D G C 
+A B B H 
+A B B H 
+I J E E 
 
 73
-
-2 2 1 2 
-2 2 1 2 
-  4 4 2 
-  4 4 2 
-1 1 3 3 
+A D F C 
+A D G C 
+  B B H 
+  B B H 
+I J E E 
 
 74
-
-2 2 1 2 
-2 2 1 2 
-4 4   2 
-4 4   2 
-1 1 3 3 
+A D F C 
+A D G C 
+B B   H 
+B B   H 
+I J E E 
 
 75
-
-2 2 1 2 
-2 2   2 
-4 4   2 
-4 4 1 2 
-1 1 3 3 
+A D F C 
+A D   C 
+B B   H 
+B B G H 
+I J E E 
 
 76
-
-2 2   2 
-2 2   2 
-4 4 1 2 
-4 4 1 2 
-1 1 3 3 
+A D   C 
+A D   C 
+B B F H 
+B B G H 
+I J E E 
 
 77
-
-2 2 2   
-2 2 2   
-4 4 1 2 
-4 4 1 2 
-1 1 3 3 
+A D C   
+A D C   
+B B F H 
+B B G H 
+I J E E 
 
 78
-
-2 2 2 2 
-2 2 2 2 
-4 4 1   
-4 4 1   
-1 1 3 3 
+A D C H 
+A D C H 
+B B F   
+B B G   
+I J E E 
 
 79
-
-2 2 2 2 
-2 2 2 2 
-4 4   1 
-4 4 1   
-1 1 3 3 
+A D C H 
+A D C H 
+B B   F 
+B B G   
+I J E E 
 
 80
-
-2 2 2 2 
-2 2 2 2 
-4 4 1 1 
-4 4     
-1 1 3 3 
+A D C H 
+A D C H 
+B B G F 
+B B     
+I J E E 
 
 81
-
-2 2 2 2 
-2 2 2 2 
-4 4 1 1 
-4 4 3 3 
-1 1     
+A D C H 
+A D C H 
+B B G F 
+B B E E 
+I J     
 
 82
-
-2 2 2 2 
-2 2 2 2 
-4 4 1 1 
-4 4 3 3 
-1     1 
+A D C H 
+A D C H 
+B B G F 
+B B E E 
+I     J 
 
 83
-
-2 2 2 2 
-2 2 2 2 
-4 4 1 1 
-4 4 3 3 
-    1 1 
+A D C H 
+A D C H 
+B B G F 
+B B E E 
+    I J 
 
 84
-
-2 2 2 2 
-2 2 2 2 
-    1 1 
-4 4 3 3 
-4 4 1 1 
+A D C H 
+A D C H 
+    G F 
+B B E E 
+B B I J 
 
 85
-
-2 2 2 2 
-2 2 2 2 
-1     1 
-4 4 3 3 
-4 4 1 1 
+A D C H 
+A D C H 
+G     F 
+B B E E 
+B B I J 
 
 86
-
-2 2 2 2 
-2 2 2 2 
-1 1     
-4 4 3 3 
-4 4 1 1 
+A D C H 
+A D C H 
+G F     
+B B E E 
+B B I J 
 
 87
-
-2 2 2 2 
-2 2 2 2 
-1 1 3 3 
-4 4     
-4 4 1 1 
+A D C H 
+A D C H 
+G F E E 
+B B     
+B B I J 
 
 88
-
-2 2 2 2 
-2 2 2 2 
-1 1 3 3 
-4 4 1   
-4 4   1 
+A D C H 
+A D C H 
+G F E E 
+B B I   
+B B   J 
 
 89
-
-2 2 2 2 
-2 2 2 2 
-1 1 3 3 
-4 4   1 
-4 4   1 
+A D C H 
+A D C H 
+G F E E 
+B B   I 
+B B   J 
 
 90
-
-2 2 2 2 
-2 2 2 2 
-1 1 3 3 
-  4 4 1 
-  4 4 1 
+A D C H 
+A D C H 
+G F E E 
+  B B I 
+  B B J 
 
 
