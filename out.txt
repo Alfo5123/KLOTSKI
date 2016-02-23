@@ -71,568 +71,506 @@ F D J H
 10
 A B B C 
 A B B C 
-E E G   
+E E   G 
 I D   H 
 F D J H 
 
 11
 A B B C 
 A B B C 
-E E   G 
-I D   H 
-F D J H 
-
-12
-A B B C 
-A B B C 
 E E J G 
 I D   H 
 F D   H 
 
-13
+12
 A B B C 
 A B B C 
 E E J G 
 I   D H 
 F   D H 
 
-14
-A B B C 
-A B B C 
-E E J G 
-  I D H 
-F   D H 
-
-15
+13
 A B B C 
 A B B C 
 E E J G 
     D H 
 F I D H 
 
-16
+14
 A B B C 
 A B B C 
     J G 
 E E D H 
 F I D H 
 
-17
+15
 A B B C 
 A B B C 
 J     G 
 E E D H 
 F I D H 
 
-18
+16
 A B B C 
 A B B C 
 J G     
 E E D H 
 F I D H 
 
-19
+17
 A B B C 
 A B B C 
 J G D   
 E E D H 
 F I   H 
 
-20
+18
 A B B C 
 A B B C 
 J G D H 
 E E D H 
 F I     
 
-21
+19
 A B B C 
 A B B C 
 J G D H 
 E E D H 
 F     I 
 
-22
+20
 A B B C 
 A B B C 
 J G D H 
 E E D H 
     F I 
 
-23
+21
 A B B C 
 A B B C 
 J G D H 
     D H 
 E E F I 
 
+22
+A B B C 
+A B B C 
+J   D H 
+G   D H 
+E E F I 
+
+23
+A B B C 
+A B B C 
+J D   H 
+G D   H 
+E E F I 
+
 24
 A B B C 
 A B B C 
-  G D H 
-J   D H 
+J D H   
+G D H   
 E E F I 
 
 25
-A B B C 
-A B B C 
-G   D H 
-J   D H 
+A B B   
+A B B   
+J D H C 
+G D H C 
 E E F I 
 
 26
-A B B C 
-A B B C 
-G D   H 
-J D   H 
+A   B B 
+A   B B 
+J D H C 
+G D H C 
 E E F I 
 
 27
-A B B C 
-A B B C 
-G D H   
-J D H   
+  A B B 
+  A B B 
+J D H C 
+G D H C 
 E E F I 
 
 28
-A B B   
-A B B   
+J A B B 
+  A B B 
+  D H C 
 G D H C 
-J D H C 
 E E F I 
 
 29
-A   B B 
-A   B B 
-G D H C 
-J D H C 
+J A B B 
+G A B B 
+  D H C 
+  D H C 
 E E F I 
 
 30
-  A B B 
-  A B B 
-G D H C 
-J D H C 
+J A B B 
+G A B B 
+D   H C 
+D   H C 
 E E F I 
 
 31
-G A B B 
-  A B B 
-  D H C 
-J D H C 
+J   B B 
+G   B B 
+D A H C 
+D A H C 
 E E F I 
 
 32
-G A B B 
-J A B B 
-  D H C 
-  D H C 
+J B B   
+G B B   
+D A H C 
+D A H C 
 E E F I 
 
 33
-G A B B 
-J A B B 
-D   H C 
-D   H C 
+J B B C 
+G B B C 
+D A H   
+D A H   
 E E F I 
 
 34
-G   B B 
-J   B B 
-D A H C 
-D A H C 
+J B B C 
+G B B C 
+D A   H 
+D A   H 
 E E F I 
 
 35
-G B B   
-J B B   
-D A H C 
-D A H C 
-E E F I 
-
-36
-G B B C 
 J B B C 
-D A H   
-D A H   
-E E F I 
-
-37
 G B B C 
-J B B C 
-D A   H 
-D A   H 
-E E F I 
-
-38
-G B B C 
-J B B C 
 D A F H 
 D A   H 
 E E   I 
 
-39
-G B B C 
+36
 J B B C 
-D A F H 
-D A   H 
-E E I   
-
-40
 G B B C 
-J B B C 
 D A F H 
 D A I H 
 E E     
 
-41
-G B B C 
+37
 J B B C 
+G B B C 
 D A F H 
 D A I H 
     E E 
 
-42
-G B B C 
+38
 J B B C 
+G B B C 
   A F H 
 D A I H 
 D   E E 
 
-43
-G B B C 
+39
 J B B C 
+G B B C 
     F H 
 D A I H 
 D A E E 
 
-44
-G B B C 
+40
 J B B C 
+G B B C 
 F     H 
 D A I H 
 D A E E 
 
-45
-G     C 
-J B B C 
+41
+J     C 
+G B B C 
 F B B H 
 D A I H 
 D A E E 
 
-46
-    G C 
-J B B C 
+42
+    J C 
+G B B C 
 F B B H 
 D A I H 
 D A E E 
 
-47
-J   G C 
+43
+  G J C 
   B B C 
 F B B H 
 D A I H 
 D A E E 
 
-48
-  J G C 
-  B B C 
-F B B H 
-D A I H 
-D A E E 
-
-49
-F J G C 
+44
+F G J C 
   B B C 
   B B H 
 D A I H 
 D A E E 
 
-50
-F J G C 
+45
+F G J C 
 D B B C 
 D B B H 
   A I H 
   A E E 
 
-51
-F J G C 
+46
+F G J C 
 D B B C 
 D B B H 
 A   I H 
 A   E E 
 
-52
-F J G C 
-D B B C 
-D B B H 
-A I   H 
-A   E E 
-
-53
-F J G C 
+47
+F G J C 
 D B B C 
 D B B H 
 A     H 
 A I E E 
 
-54
-F J G C 
+48
+F G J C 
 D     C 
 D B B H 
 A B B H 
 A I E E 
 
-55
-F   G C 
-D J   C 
-D B B H 
-A B B H 
-A I E E 
-
-56
+49
 F G   C 
 D J   C 
 D B B H 
 A B B H 
 A I E E 
 
-57
+50
 F G C   
 D J C   
 D B B H 
 A B B H 
 A I E E 
 
-58
+51
 F G C H 
 D J C H 
 D B B   
 A B B   
 A I E E 
 
-59
+52
 F G C H 
 D J C H 
 D   B B 
 A   B B 
 A I E E 
 
-60
+53
 F G C H 
 D   C H 
-D J B B 
-A   B B 
+D   B B 
+A J B B 
 A I E E 
 
-61
+54
 F   C H 
 D G C H 
-D J B B 
-A   B B 
+D   B B 
+A J B B 
 A I E E 
 
-62
+55
   F C H 
 D G C H 
-D J B B 
-A   B B 
-A I E E 
-
-63
-D F C H 
-D G C H 
-  J B B 
-A   B B 
-A I E E 
-
-64
-D F C H 
-D G C H 
+D   B B 
 A J B B 
+A I E E 
+
+56
+D F C H 
+D G C H 
+    B B 
+A J B B 
+A I E E 
+
+57
+D F C H 
+D G C H 
 A   B B 
+A J B B 
   I E E 
 
-65
+58
 D F C H 
 D G C H 
-A J B B 
 A   B B 
+A J B B 
 I   E E 
 
-66
+59
 D F C H 
 D G C H 
 A   B B 
 A   B B 
 I J E E 
 
-67
+60
 D F C H 
 D G C H 
 A B B   
 A B B   
 I J E E 
 
-68
+61
 D F C   
 D G C   
 A B B H 
 A B B H 
 I J E E 
 
-69
+62
 D F   C 
 D G   C 
 A B B H 
 A B B H 
 I J E E 
 
-70
+63
 D   F C 
 D G   C 
 A B B H 
 A B B H 
 I J E E 
 
-71
+64
 D   F C 
 D   G C 
 A B B H 
 A B B H 
 I J E E 
 
-72
+65
   D F C 
   D G C 
 A B B H 
 A B B H 
 I J E E 
 
-73
+66
 A D F C 
 A D G C 
   B B H 
   B B H 
 I J E E 
 
-74
+67
 A D F C 
 A D G C 
 B B   H 
 B B   H 
 I J E E 
 
-75
+68
 A D F C 
 A D   C 
 B B   H 
 B B G H 
 I J E E 
 
-76
+69
 A D   C 
 A D   C 
 B B F H 
 B B G H 
 I J E E 
 
-77
+70
 A D C   
 A D C   
 B B F H 
 B B G H 
 I J E E 
 
-78
+71
 A D C H 
 A D C H 
 B B F   
 B B G   
 I J E E 
 
+72
+A D C H 
+A D C H 
+B B F G 
+B B     
+I J E E 
+
+73
+A D C H 
+A D C H 
+B B F G 
+B B E E 
+I J     
+
+74
+A D C H 
+A D C H 
+B B F G 
+B B E E 
+I     J 
+
+75
+A D C H 
+A D C H 
+B B F G 
+B B E E 
+    I J 
+
+76
+A D C H 
+A D C H 
+    F G 
+B B E E 
+B B I J 
+
+77
+A D C H 
+A D C H 
+F     G 
+B B E E 
+B B I J 
+
+78
+A D C H 
+A D C H 
+F G     
+B B E E 
+B B I J 
+
 79
 A D C H 
 A D C H 
-B B   F 
-B B G   
-I J E E 
+F G E E 
+B B     
+B B I J 
 
 80
 A D C H 
 A D C H 
-B B G F 
-B B     
-I J E E 
+F G E E 
+B B   I 
+B B   J 
 
 81
 A D C H 
 A D C H 
-B B G F 
-B B E E 
-I J     
-
-82
-A D C H 
-A D C H 
-B B G F 
-B B E E 
-I     J 
-
-83
-A D C H 
-A D C H 
-B B G F 
-B B E E 
-    I J 
-
-84
-A D C H 
-A D C H 
-    G F 
-B B E E 
-B B I J 
-
-85
-A D C H 
-A D C H 
-G     F 
-B B E E 
-B B I J 
-
-86
-A D C H 
-A D C H 
-G F     
-B B E E 
-B B I J 
-
-87
-A D C H 
-A D C H 
-G F E E 
-B B     
-B B I J 
-
-88
-A D C H 
-A D C H 
-G F E E 
-B B I   
-B B   J 
-
-89
-A D C H 
-A D C H 
-G F E E 
-B B   I 
-B B   J 
-
-90
-A D C H 
-A D C H 
-G F E E 
+F G E E 
   B B I 
   B B J 
+
 
 
